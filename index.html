@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Flashcards</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Include MathJax for rendering math expressions -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Include Math.js for parsing and manipulating expressions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.1.0/math.min.js"></script>
+
+    <!-- Include JSXGraph for graphing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.js"></script>
+
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="entry-page" class="active">
+    <button class="btn btn-primary button" onclick="showFlashcard('linear')">Lineare Funktionen</button>
+    <button class="btn btn-secondary button" onclick="showFlashcard('quadratic')">Quadratische Funktionen</button>
+    <button class="btn btn-success button" onclick="showFlashcard('exponential')">Exponentialfunktionen</button>
+</div>
+
+<div id="flashcard" class="bg-light">
+    <div id="flashcard-content"></div>
+    <div id="graph"></div>
+    <button class="back-button btn btn-link" onclick="goBack()">
+        <i class="fas fa-times"></i>
+    </button>
+    <button class="prev-button btn btn-info" onclick="prevFlashcard()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <button class="flip-button btn btn-warning" onclick="flipCard()">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+    <button class="next-button btn btn-info" onclick="nextFlashcard()">
+        <i class="fas fa-arrow-right"></i>
+    </button>
+</div>
+
+<!-- Include external JavaScript files -->
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
