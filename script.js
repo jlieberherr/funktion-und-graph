@@ -26,7 +26,9 @@ function updateFlashcard() {
     const graphDiv = document.getElementById('graph');
 
     if (isShowingFront) {
+        // noinspection JSUnresolvedVariable
         const parsedFunction = math.parse(currentFunction.equation);
+        // noinspection JSUnresolvedFunction
         const latexString = `
       f = \\left\\{ 
       \\begin{array}{l}
@@ -36,6 +38,7 @@ function updateFlashcard() {
       \\right.
     `;
         flashcardContent.innerHTML = `\\(${latexString}\\)`;
+        // noinspection JSUnresolvedVariable
         MathJax.typeset();
         flashcardContent.style.display = 'flex';
         graphDiv.style.display = 'none';
@@ -77,9 +80,11 @@ function goBack() {
 
 function plotGraph(funcString, points, boundingbox) {
     if (board !== null) {
+        // noinspection JSUnresolvedVariable
         JXG.JSXGraph.freeBoard(board);
     }
 
+    // noinspection JSUnresolvedVariable
     board = JXG.JSXGraph.initBoard('graph', {
         boundingbox: boundingbox,
         axis: true,
@@ -91,9 +96,10 @@ function plotGraph(funcString, points, boundingbox) {
         showCopyright: false
     });
 
+    // noinspection JSUnresolvedVariable
     const parsedFunction = math.compile(funcString);
 
-    f = function (x_) {
+    let f = function (x_) {
         return parsedFunction.evaluate({x: x_});
     };
 
@@ -101,7 +107,7 @@ function plotGraph(funcString, points, boundingbox) {
 
     points.forEach(point => {
         const [x, y] = point;
-        const p = board.create('point', [x, y], {size: 4, color: 'red', name: '', fixed: true});
+        board.create('point', [x, y], {size: 4, color: 'red', name: '', fixed: true});
         board.create('text', [x + 0.2, y + 0.2, `(${x}|${y})`], {fontSize: 12, fixed: true});
     });
 }
