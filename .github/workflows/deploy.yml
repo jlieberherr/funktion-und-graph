@@ -1,18 +1,30 @@
-name: CI -> Deploy to funktion-und-graph.ch
+name: Deploy to funktion-und-graph.ch
+
 on:
   push:
-    branches: main
+    branches:
+      - main
+
 jobs:
-  build:
+  deploy:
+    name: Deploy website via FTPS
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Upload from public_html via FTP
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install lftp for FTPS deployment
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy via FTPS
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          sudo apt-get install -y ftp
-          ftp -inv ${{ secrets.FTP_HOST }} <<EOF
-          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
-          cd funktion-und-graph.ch/public_html
-          mput *
-          bye
-          EOF
+          lftp -e "
+            set ftp:ssl-allow yes;          # Enable SSL for FTPS
+            set ftp:ssl-force yes;          # Force SSL for all connections
+            mirror -R ./ funktion-und-graph.ch/public_html/;
+            quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_HOST
