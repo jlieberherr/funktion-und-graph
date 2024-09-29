@@ -8,9 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Upload from public_html via FTP
-        uses: airvzxf/ftp-deployment-action@latest
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          remote_dir: "./funktion-und-graph.ch/public_html"
+        run: |
+          sudo apt-get install -y ftp
+          ftp -inv ${{ secrets.FTP_HOST }} <<EOF
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+          cd funktion-und-graph.ch/public_html
+          mput *
+          bye
+          EOF
