@@ -43,6 +43,15 @@ const functionsData = {
         {equation: "3x^2 - 5", points: [[-2, 7], [0, -5], [2, 7]], boundingbox: [-5, 10, 5, -10]},
         {equation: "x^2 - x + 1", points: [[-2, 7], [0, 1], [2, 3]], boundingbox: [-5, 10, 5, 0]}
     ],
+    power: [
+        {equation: "x^3", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "1/x", points: [[-1, -1], [2, 0.5]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "1/(x^2)", points: [[-2, 0.25], [1, 1]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "x^4", points: [[-0.5, 0.0625], [1, 1]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "sqrt(x)", points: [[0, 0], [1, 1]], boundingbox: [-1, 3, 4, -1]},
+        {equation: "sqrt(x+2)-1", points: [[0, 0], [1, 1]], boundingbox: [-3, 2, 2, -2]},
+        {equation: "5/(x-1)", points: [[-1, -1], [2, 0.5]], boundingbox: [-3, 3, 3, -3]},
+    ],
     exponential: [
         {equation: "e^x", points: [[-2, 0.1353], [0, 1]], boundingbox: [-3, 5, 3, -1]},
         {equation: "2^x", points: [[-2, 0.25], [0, 1], [2, 4]], boundingbox: [-3, 5, 3, 0]},
@@ -64,5 +73,16 @@ const functionsData = {
         {equation: "0.1^x", points: [[-2, 100], [0, 1], [2, 0.01]], boundingbox: [-3, 120, 3, 0]},
         {equation: "3^{x+1}", points: [[-2, 0.3333], [0, 3], [2, 27]], boundingbox: [-3, 30, 3, 0]},
         {equation: "5^{-x}", points: [[-2, 25], [0, 1], [2, 0.04]], boundingbox: [-3, 30, 3, 0]}
+    ],
+    logarithmic: [
+        {equation: "ln(x)", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "log_2(x)", points: [[-1, -1], [2, 0.5]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "log_0.5(x)", points: [[-2, 0.25], [1, 1]], boundingbox: [-3, 3, 3, -3]},
+    ],
+    trigonometric: [
+        {equation: "sin(x)", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "cos(x)", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "tan(x)", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
+        {equation: "0.5sin(x-2)", points: [[-1, -1], [0, 0]], boundingbox: [-3, 3, 3, -3]},
     ]
 };

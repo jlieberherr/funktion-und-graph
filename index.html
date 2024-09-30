@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funktion und Graph</title>
 
-    <link rel="icon" type="image/png" sizes="16x16"  href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -28,9 +28,24 @@
 <body>
 
 <div id="entry-page" class="active">
-    <button class="btn btn-primary button" onclick="showFlashcard('linear')">Lineare Funktionen</button>
-    <button class="btn btn-secondary button" onclick="showFlashcard('quadratic')">Quadratische Funktionen</button>
-    <button class="btn btn-success button" onclick="showFlashcard('exponential')">Exponentialfunktionen</button>
+    <button class="button" onclick="showFlashcard('linear')" style="background-color: blue">Lineare Funktionen</button>
+    <button class="button" onclick="showFlashcard('quadratic')" style="background-color: mediumblue">Quadratische
+        Funktionen
+    </button>
+    <button class="button" onclick="showFlashcard('power')" style="background-color: darkblue">Potenz- und
+        Wurzelfunktionen
+    </button>
+    <button class="button" onclick="showFlashcard('exponential')" style="background-color: green">
+        Exponentialfunktionen
+    </button>
+    <button class="button" onclick="showFlashcard('logarithmic')" style="background-color: darkgreen">
+        Logarithmusfunktionen
+    </button>
+    <button class="button" onclick="showFlashcard('trigonometric')" style="background-color: darkgoldenrod">
+        Trigonometrische Funktionen
+    </button>
+    <button class="button" onclick="showFlashcard('mixed')" style="background-color: indianred">Gemischt</button>
+    <button class="button" onclick="showFlashcard('all')" style="background-color: maroon">Alle</button>
 </div>
 
 <div id="flashcard" class="bg-light">
