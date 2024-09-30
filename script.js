@@ -33,7 +33,7 @@ function updateFlashcard() {
       f = \\left\\{ 
       \\begin{array}{l}
       \\mathbb{R} \\to \\mathbb{R} \\\\
-      x \\mapsto ${parsedFunction.toTex()}
+      x \\mapsto ${parsedFunction.toTex({parenthesis: 'auto'})}
       \\end{array} 
       \\right.
     `;
