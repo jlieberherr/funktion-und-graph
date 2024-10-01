@@ -3,6 +3,25 @@ let currentFunction = '';
 let currentIndex = 0;
 let currentType = '';
 let board = null;
+let isRandomOrder = true; // Default is random order (Ja)
+
+function setRandomOrder(random) {
+    isRandomOrder = random;
+
+    // Ensure exactly one button is active
+    if (random) {
+        document.getElementById('option-yes').classList.add('active');
+        document.getElementById('option-no').classList.remove('active');
+    } else {
+        document.getElementById('option-yes').classList.remove('active');
+        document.getElementById('option-no').classList.add('active');
+    }
+}
+
+// Ensure the "Ja" button is active by default
+window.onload = function () {
+    setRandomOrder(true);
+};
 
 // Show a random side (front or back) when the flashcard is displayed
 function showFlashcard(type) {

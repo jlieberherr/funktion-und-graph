@@ -32,14 +32,75 @@ body, html {
 .button {
     width: 100%;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: bold;
     color: white;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 10px;
+    margin: 4px;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
 }
+
+.dropdown-container {
+    margin-top: 5px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically aligns the items in the container */
+    width: 100%;
+}
+
+.dropdown-container label {
+    margin-right: 10px; /* Adds space between the label and select */
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+#modeSelection, #nbCards {
+    width: auto;
+    padding-left: 2px;
+    padding-right: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.random-order-container {
+    margin-top: 5px;
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically aligns the items in the container */
+    width: 100%;
+}
+
+.random-order-container label {
+    margin-right: 10px; /* Adds space between the label and select */
+    font-size: 20px;
+    font-weight: bold;
+    align-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.btn-group {
+    margin-top: 0;
+    display: flex;
+    width: 120px;
+    height: 100%;
+}
+
+.btn-group button {
+    font-size: 20px;
+    cursor: pointer;
+    width: 60px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 #flashcard {
     max-width: 500px;

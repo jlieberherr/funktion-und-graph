@@ -46,6 +46,37 @@
     </button>
     <button class="button" onclick="showFlashcard('mixed')" style="background-color: indianred">Gemischt</button>
     <button class="button" onclick="showFlashcard('all')" style="background-color: maroon">Alle</button>
+
+    <div class="dropdown-container">
+        <label for="modeSelection">Richtung:</label>
+        <select id="modeSelection" class="form-control">
+            <option value="both">Graph &#10231 Funktion</option>
+            <option value="functionToGraph">Funktion &#10230 Graph</option>
+            <option value="graphToFunction">Graph &#10229 Funktion</option>
+        </select>
+    </div>
+
+    <div class="dropdown-container">
+        <label for="nbCards">Anzahl Karten:</label>
+        <select id="nbCards" class="form-control">
+            <option value="all">alle</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+
+    <div class="random-order-container">
+        <label for="randomOrder">Zufällige Reihenfolge:</label>
+        <div class="btn-group" id="randomOrder" role="group">
+            <button type="button" class="btn btn-outline-primary" id="option-yes" onclick="setRandomOrder(true)">Ja
+            </button>
+            <button type="button" class="btn btn-outline-primary" id="option-no" onclick="setRandomOrder(false)">Nein
+            </button>
+        </div>
+    </div>
 </div>
 
 <div id="flashcard" class="bg-light">
