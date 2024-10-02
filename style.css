@@ -42,6 +42,10 @@ body, html {
     border-radius: 5px;
 }
 
+.button.selected {
+    opacity: 0.5;
+}
+
 .dropdown-container {
     margin-top: 5px;
     display: flex; /* Use flexbox for horizontal alignment */

@@ -130,3 +130,9 @@ function plotGraph(funcString, points, boundingbox) {
         board.create('text', [x + 0.2, y + 0.2, `(${x}|${y})`], {fontSize: 12, fixed: true});
     });
 }
+
+function changeStatus(button) {
+    button.classList.toggle('selected');
+}
+
+
