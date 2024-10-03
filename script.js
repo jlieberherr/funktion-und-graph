@@ -10,6 +10,7 @@ let functionDataPerId = {}
 function generateButton(functionData) {
     const button = document.createElement('button');
     button.className = 'button';
+    button.setAttribute('id', functionData['id']);
     button.setAttribute('data-isSelected', 'true');
     button.style.backgroundColor = functionData["color"];
     button.innerHTML = functionData["description"];
@@ -25,6 +26,17 @@ function generateAllButtons() {
             functionDataPerId[functionData["id"]] = functionsData;
         }
     )
+}
+
+function getSelectedButtons() {
+    const selectedButtons = document.querySelectorAll('button[data-isSelected="true"]');
+    return Array.from(selectedButtons);
+}
+
+function changeStatus(button) {
+    const isSelected = button.getAttribute('data-isSelected') === 'true';
+    button.setAttribute('data-isSelected', !isSelected);
+    getSelectedButtons();
 }
 
 
@@ -154,10 +166,6 @@ function plotGraph(funcString, points, boundingbox) {
     });
 }
 
-function changeStatus(button) {
-    const isSelected = button.getAttribute('data-isSelected') === 'true';
-    button.setAttribute('data-isSelected', !isSelected);
-}
 
 window.onload = generateAllButtons;
 
