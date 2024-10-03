@@ -5,6 +5,29 @@ let currentType = '';
 let board = null;
 let isRandomOrder = true; // Default is random order (Ja)
 
+let functionDataPerId = {}
+
+function generateButton(functionData) {
+    const button = document.createElement('button');
+    button.className = 'button';
+    button.setAttribute('data-isSelected', 'true');
+    button.style.backgroundColor = functionData["color"];
+    button.innerHTML = functionData["description"];
+    button.setAttribute('onclick', 'changeStatus(this)');
+
+    const container = document.getElementById('button-container');
+    container.appendChild(button);
+}
+
+function generateAllButtons() {
+    functionsData.forEach(functionData => {
+            generateButton(functionData);
+            functionDataPerId[functionData["id"]] = functionsData;
+        }
+    )
+}
+
+
 function setRandomOrder(random) {
     isRandomOrder = random;
 
@@ -37,7 +60,7 @@ function showFlashcard(type) {
 }
 
 function getCurrentFunction() {
-    return functionsData[currentType][currentIndex];
+    return functionDataPerId[currentType][currentIndex];
 }
 
 function updateFlashcard() {
@@ -84,7 +107,7 @@ function prevFlashcard() {
 }
 
 function nextFlashcard() {
-    if (currentIndex < functionsData[currentType].length - 1) {
+    if (currentIndex < functionDataPerId[currentType].length - 1) {
         currentIndex++;
         currentFunction = getCurrentFunction();
         isShowingFront = Math.random() >= 0.5;
@@ -135,5 +158,7 @@ function changeStatus(button) {
     const isSelected = button.getAttribute('data-isSelected') === 'true';
     button.setAttribute('data-isSelected', !isSelected);
 }
+
+window.onload = generateAllButtons;
 
 
