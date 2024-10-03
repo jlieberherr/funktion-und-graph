@@ -28,24 +28,26 @@
 <body>
 
 <div id="entry-page" class="active">
-    <button class="button" onclick="showFlashcard('linear')" style="background-color: blue">Lineare Funktionen</button>
-    <button class="button" onclick="showFlashcard('quadratic')" style="background-color: mediumblue">Quadratische
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: blue">Lineare
         Funktionen
     </button>
-    <button class="button" onclick="showFlashcard('power')" style="background-color: darkblue">Potenz- und
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: mediumblue">
+        Quadratische
+        Funktionen
+    </button>
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: darkblue">
+        Potenz- und
         Wurzelfunktionen
     </button>
-    <button class="button" onclick="showFlashcard('exponential')" style="background-color: green">
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: green">
         Exponentialfunktionen
     </button>
-    <button class="button" onclick="showFlashcard('logarithmic')" style="background-color: darkgreen">
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: darkgreen">
         Logarithmusfunktionen
     </button>
-    <button class="button" onclick="showFlashcard('trigonometric')" style="background-color: darkgoldenrod">
+    <button class="button" onclick="changeStatus(this)" data-isSelected="true" style="background-color: darkgoldenrod">
         Trigonometrische Funktionen
     </button>
-    <button class="button" onclick="changeStatus(this)" style="background-color: indianred">Gemischt</button>
-    <button class="button" onclick="changeStatus(this)" style="background-color: maroon">Alle</button>
 
     <div class="dropdown-container">
         <label for="modeSelection">Richtung:</label>
@@ -77,6 +79,9 @@
             </button>
         </div>
     </div>
+
+    <button class="button" style="background-color: indianred">Start</button>
+
 </div>
 
 <div id="flashcard" class="bg-light">

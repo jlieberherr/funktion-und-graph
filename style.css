@@ -42,7 +42,7 @@ body, html {
     border-radius: 5px;
 }
 
-.button.selected {
+button[data-isSelected="false"] {
     opacity: 0.5;
 }
 

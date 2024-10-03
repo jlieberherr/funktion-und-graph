@@ -132,7 +132,8 @@ function plotGraph(funcString, points, boundingbox) {
 }
 
 function changeStatus(button) {
-    button.classList.toggle('selected');
+    const isSelected = button.getAttribute('data-isSelected') === 'true';
+    button.setAttribute('data-isSelected', !isSelected);
 }
 
 
