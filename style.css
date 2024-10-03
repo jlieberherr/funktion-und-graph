@@ -42,18 +42,23 @@ body, html {
     border-radius: 5px;
 }
 
+.disabled {
+    pointer-events: none; /* Prevents clicks */
+    opacity: 0.5; /* Visual indication of being disabled */
+}
+
 button[data-isSelected="false"] {
     opacity: 0.5;
 }
 
-.dropdown-container {
+.dropdown-container, .select-all-or-none-button-container {
     margin-top: 5px;
     display: flex; /* Use flexbox for horizontal alignment */
     align-items: center; /* Vertically aligns the items in the container */
     width: 100%;
 }
 
-.dropdown-container label {
+.dropdown-container label, .select-all-or-none-button-container label {
     margin-right: 10px; /* Adds space between the label and select */
     font-size: 20px;
     font-weight: bold;
@@ -73,7 +78,7 @@ button[data-isSelected="false"] {
     border: 1px solid #ccc;
 }
 
-.random-order-container {
+.random-order-container, .select-all-or-none-button-container {
     margin-top: 5px;
     display: flex; /* Use flexbox for horizontal alignment */
     align-items: center; /* Vertically aligns the items in the container */
@@ -97,14 +102,13 @@ button[data-isSelected="false"] {
     height: 100%;
 }
 
-.btn-group button {
+.btn-group button, .buttonSelection button {
     font-size: 20px;
     cursor: pointer;
     width: 60px;
     padding-left: 0;
     padding-right: 0;
 }
-
 
 #flashcard {
     max-width: 500px;

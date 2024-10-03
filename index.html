@@ -29,6 +29,13 @@
 
 <div id="entry-page" class="active">
     <div id="button-container"></div>
+    <div class="select-all-or-none-button-container">
+        <label for="buttonSelection">Auswählen:</label>
+        <div id="buttonSelection" class="buttonSelection">
+            <button type="button" class="btn btn-outline-primary" onclick="setAllButtonsTo(true)">Alle</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="setAllButtonsTo(false)">Keine</button>
+        </div>
+    </div>
 
     <div class="dropdown-container">
         <label for="modeSelection">Richtung:</label>
@@ -54,14 +61,16 @@
     <div class="random-order-container">
         <label for="randomOrder">Zufällige Reihenfolge:</label>
         <div class="btn-group" id="randomOrder" role="group">
-            <button type="button" class="btn btn-outline-primary" id="option-yes" onclick="setRandomOrder(true)">Ja
+            <button type="button" class="btn btn-outline-primary active" id="option-yes" onclick="setRandomOrder(true)">
+                Ja
             </button>
             <button type="button" class="btn btn-outline-primary" id="option-no" onclick="setRandomOrder(false)">Nein
             </button>
         </div>
     </div>
 
-    <button class="button" style="background-color: indianred">Start</button>
+    <button id="start-button" class="button" style="background-color: maroon" onclick="showFlashcards()">Start
+    </button>
 
 </div>
 

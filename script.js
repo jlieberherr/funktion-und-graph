@@ -5,7 +5,8 @@ let currentType = '';
 let board = null;
 let isRandomOrder = true; // Default is random order (Ja)
 
-let functionDataPerId = {}
+let functionDataPerId = {};
+let functionButtons = [];
 
 function generateButton(functionData) {
     const button = document.createElement('button');
@@ -18,15 +19,24 @@ function generateButton(functionData) {
 
     const container = document.getElementById('button-container');
     container.appendChild(button);
+    return button;
 }
 
 function generateAllButtons() {
     functionsData.forEach(functionData => {
-            generateButton(functionData);
+            functionButtons.push(generateButton(functionData));
             functionDataPerId[functionData["id"]] = functionsData;
         }
     )
 }
+
+function setAllButtonsTo(trueOrFalse) {
+    functionButtons.forEach(button => {
+        button.setAttribute('data-isSelected', trueOrFalse);
+    });
+    setStatusOfStartButton();
+}
+
 
 function getSelectedButtons() {
     const selectedButtons = document.querySelectorAll('button[data-isSelected="true"]');
@@ -36,7 +46,16 @@ function getSelectedButtons() {
 function changeStatus(button) {
     const isSelected = button.getAttribute('data-isSelected') === 'true';
     button.setAttribute('data-isSelected', !isSelected);
-    getSelectedButtons();
+    setStatusOfStartButton();
+}
+
+function isAtMostOneFunctionTypeSelected() {
+    return getSelectedButtons().length !== 0;
+}
+
+function setStatusOfStartButton() {
+    const startButton = document.getElementById('start-button');
+    isAtMostOneFunctionTypeSelected() === false ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
 }
 
 
@@ -51,6 +70,11 @@ function setRandomOrder(random) {
         document.getElementById('option-yes').classList.remove('active');
         document.getElementById('option-no').classList.add('active');
     }
+}
+
+function showFlashcards() {
+    let functionsTypes = getSelectedButtons().map(btn => btn.id);
+    console.log(functionsTypes);
 }
 
 // Ensure the "Ja" button is active by default
