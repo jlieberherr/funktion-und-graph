@@ -74,7 +74,7 @@ function setRandomOrder(random) {
 
 function showFlashcards() {
     let functionsTypes = getSelectedButtons().map(btn => btn.id);
-    console.log(functionsTypes);
+    alert(functionsTypes);
 }
 
 // Ensure the "Ja" button is active by default

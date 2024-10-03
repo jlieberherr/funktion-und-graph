@@ -42,6 +42,10 @@ body, html {
     border-radius: 5px;
 }
 
+#start-button {
+    margin-top: 10px;
+}
+
 .disabled {
     pointer-events: none; /* Prevents clicks */
     opacity: 0.5; /* Visual indication of being disabled */
