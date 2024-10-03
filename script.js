@@ -1,4 +1,5 @@
 let isShowingFront = true;
+let currentFunctions = [];
 let currentFunction = '';
 let currentIndex = 0;
 let currentType = '';
@@ -25,7 +26,7 @@ function generateButton(functionData) {
 function generateAllButtons() {
     functionsData.forEach(functionData => {
             functionButtons.push(generateButton(functionData));
-            functionDataPerId[functionData["id"]] = functionsData;
+            functionDataPerId[functionData["id"]] = functionData;
         }
     )
 }
@@ -74,7 +75,12 @@ function setRandomOrder(random) {
 
 function showFlashcards() {
     let functionsTypes = getSelectedButtons().map(btn => btn.id);
-    alert(functionsTypes);
+    currentFunctions = [];
+    functionsTypes.forEach(id => {
+        let functionsToAdd = functionDataPerId[id]["functions"];
+        currentFunctions = currentFunctions.concat(functionsToAdd)
+    })
+    showFlashcard();
 }
 
 // Ensure the "Ja" button is active by default
@@ -83,8 +89,7 @@ window.onload = function () {
 };
 
 // Show a random side (front or back) when the flashcard is displayed
-function showFlashcard(type) {
-    currentType = type;
+function showFlashcard() {
     currentIndex = 0;
     currentFunction = getCurrentFunction();
 
@@ -96,7 +101,7 @@ function showFlashcard(type) {
 }
 
 function getCurrentFunction() {
-    return functionDataPerId[currentType][currentIndex];
+    return currentFunctions[currentIndex];
 }
 
 function updateFlashcard() {
@@ -143,7 +148,7 @@ function prevFlashcard() {
 }
 
 function nextFlashcard() {
-    if (currentIndex < functionDataPerId[currentType].length - 1) {
+    if (currentIndex < currentFunctions.length - 1) {
         currentIndex++;
         currentFunction = getCurrentFunction();
         isShowingFront = Math.random() >= 0.5;
