@@ -2,6 +2,7 @@ let functionDataPerId = {};
 let functionButtons = [];
 
 let currentFunctions = [];
+let currentFunctionsShowFunctionFirst = [];
 let currentIndex = 0;
 let isShowingFront = true;
 let board = null;
@@ -78,6 +79,10 @@ function isRandomSort() {
     }
 }
 
+function getSelectedDirection() {
+    return document.getElementById('modeSelection').value;
+}
+
 function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 }
@@ -92,12 +97,26 @@ function showFlashcards() {
     if (isRandomSort()) {
         currentFunctions = shuffleArray(currentFunctions);
     }
+
+    const selectedDirection = getSelectedDirection();
+    if (selectedDirection === 'both') {
+        currentFunctionsShowFunctionFirst = currentFunctions.map(_ => Math.random() >= 0.5);
+    }
+    else if (selectedDirection === 'functionToGraph') {
+        currentFunctionsShowFunctionFirst = currentFunctions.map(_ => true);
+    }
+    else if (selectedDirection ==='graphToFunction') {
+        currentFunctionsShowFunctionFirst = currentFunctions.map(_ => false);
+    }
+    else {
+        throw 'direction ' + selectedDirection + ' not valid';
+    }
     showFlashcard();
 }
 
 function showFlashcard() {
     currentIndex = 0;
-    isShowingFront = true;
+    isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
 
     document.getElementById('entry-page').classList.remove('active');
     document.getElementById('flashcard').classList.add('active');
@@ -146,15 +165,15 @@ function flipCard() {
 function prevFlashcard() {
     if (currentIndex > 0) {
         currentIndex--;
+        isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
         updateFlashcard();
-        isShowingFront = true;
     }
 }
 
 function nextFlashcard() {
     if (currentIndex < currentFunctions.length - 1) {
         currentIndex++;
-        isShowingFront = true;
+        isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
         updateFlashcard();
     }
 }
