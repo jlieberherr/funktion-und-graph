@@ -5,7 +5,6 @@ let currentFunctions = [];
 let currentIndex = 0;
 let isShowingFront = true;
 let board = null;
-let isRandomOrder = true;
 
 function generateButton(functionData) {
     const button = document.createElement('button');
@@ -69,9 +68,6 @@ function setStatusOfButtons() {
 
 
 function setRandomOrder(random) {
-    isRandomOrder = random;
-
-    // Ensure exactly one button is active
     if (random) {
         document.getElementById('option-yes').classList.add('active');
         document.getElementById('option-no').classList.remove('active');
@@ -81,6 +77,21 @@ function setRandomOrder(random) {
     }
 }
 
+function isRandomSort() {
+    const buttonYes = document.getElementById('option-yes');
+    const buttonNo = document.getElementById('option-no');
+
+    if (buttonYes.classList.contains('active')) {
+        return true;
+    } else if (buttonNo.classList.contains('active')) {
+        return false;
+    }
+}
+
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
 function showFlashcards() {
     let functionsTypes = getSelectedButtons().map(btn => btn.id);
     currentFunctions = [];
@@ -88,6 +99,9 @@ function showFlashcards() {
         let functionsToAdd = functionDataPerId[id]["functions"];
         currentFunctions = currentFunctions.concat(functionsToAdd)
     })
+    if (isRandomSort()) {
+        currentFunctions = shuffleArray(currentFunctions);
+    }
     showFlashcard();
 }
 
