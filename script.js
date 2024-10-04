@@ -1,12 +1,11 @@
-let isShowingFront = true;
-let currentFunctions = [];
-let currentFunction = '';
-let currentIndex = 0;
-let board = null;
-let isRandomOrder = true; // Default is random order (Ja)
-
 let functionDataPerId = {};
 let functionButtons = [];
+
+let currentFunctions = [];
+let currentIndex = 0;
+let isShowingFront = true;
+let board = null;
+let isRandomOrder = true;
 
 function generateButton(functionData) {
     const button = document.createElement('button');
@@ -50,9 +49,6 @@ function changeStatus(button) {
     setStatusOfButtons();
 }
 
-function isAtMostOneFunctionTypeSelected() {
-    return getSelectedButtons().length !== 0;
-}
 
 function setStatusOfButtons() {
     const startButton = document.getElementById('start-button');
@@ -95,17 +91,9 @@ function showFlashcards() {
     showFlashcard();
 }
 
-// Ensure the "Ja" button is active by default
-window.onload = function () {
-    setRandomOrder(true);
-};
-
-// Show a random side (front or back) when the flashcard is displayed
 function showFlashcard() {
     currentIndex = 0;
-    currentFunction = getCurrentFunction();
-
-    isShowingFront = Math.random() >= 0.5;
+    isShowingFront = true;
 
     document.getElementById('entry-page').classList.remove('active');
     document.getElementById('flashcard').classList.add('active');
@@ -122,7 +110,7 @@ function updateFlashcard() {
 
     if (isShowingFront) {
         // noinspection JSUnresolvedVariable
-        const parsedFunction = math.parse(currentFunction.equation);
+        const parsedFunction = math.parse(getCurrentFunction().equation);
         // noinspection JSUnresolvedFunction
         const latexString = `
       f = \\left\\{ 
@@ -141,6 +129,7 @@ function updateFlashcard() {
         flashcardContent.innerHTML = '';
         flashcardContent.style.display = 'none';
         graphDiv.style.display = 'flex';
+        const currentFunction = getCurrentFunction();
         plotGraph(currentFunction.equation, currentFunction.points, currentFunction.boundingbox);
     }
 }
@@ -153,17 +142,15 @@ function flipCard() {
 function prevFlashcard() {
     if (currentIndex > 0) {
         currentIndex--;
-        currentFunction = getCurrentFunction();
-        isShowingFront = Math.random() >= 0.5;
         updateFlashcard();
+        isShowingFront = true;
     }
 }
 
 function nextFlashcard() {
     if (currentIndex < currentFunctions.length - 1) {
         currentIndex++;
-        currentFunction = getCurrentFunction();
-        isShowingFront = Math.random() >= 0.5;
+        isShowingFront = true;
         updateFlashcard();
     }
 }
