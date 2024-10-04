@@ -56,14 +56,6 @@ function setStatusOfButtons() {
 
     const nbSelectedButtons = getSelectedButtons().length;
     nbSelectedButtons === 0 ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
-    if (nbSelectedButtons > 1) {
-        randomYesButton.classList.add('disabled');
-        randomNoButton.classList.add('disabled');
-    } else {
-        randomYesButton.classList.remove('disabled');
-        randomNoButton.classList.remove('disabled');
-    }
-
 }
 
 
