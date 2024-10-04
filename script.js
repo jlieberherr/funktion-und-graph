@@ -51,8 +51,6 @@ function changeStatus(button) {
 
 function setStatusOfButtons() {
     const startButton = document.getElementById('start-button');
-    const randomYesButton = document.getElementById('option-yes');
-    const randomNoButton = document.getElementById('option-no');
 
     const nbSelectedButtons = getSelectedButtons().length;
     nbSelectedButtons === 0 ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
