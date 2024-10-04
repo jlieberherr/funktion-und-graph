@@ -57,6 +57,14 @@ function setStatusOfButtons() {
     nbSelectedButtons === 0 ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
 }
 
+function controlFlashcardButtons() {
+    const prevButton = document.getElementById('prev-button');
+    const nextButton = document.getElementById('next-button');
+
+    currentIndex === 0 ? prevButton.classList.add('disabled') : prevButton.classList.remove('disabled');
+    currentIndex === currentFunctions.length - 1 ? nextButton.classList.add('disabled') : nextButton.classList.remove('disabled');
+}
+
 
 function setRandomOrder(random) {
     if (random) {
@@ -108,15 +116,11 @@ function showFlashcards() {
     } else {
         throw 'direction ' + selectedDirection + ' not valid';
     }
-    showFlashcard();
-}
-
-function showFlashcard() {
-    currentIndex = 0;
     isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
-
     document.getElementById('entry-page').classList.remove('active');
     document.getElementById('flashcard').classList.add('active');
+    currentIndex = 0;
+    controlFlashcardButtons();
     updateFlashcard();
 }
 
@@ -162,6 +166,7 @@ function flipCard() {
 function prevFlashcard() {
     if (currentIndex > 0) {
         currentIndex--;
+        controlFlashcardButtons();
         isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
         updateFlashcard();
     }
@@ -170,6 +175,7 @@ function prevFlashcard() {
 function nextFlashcard() {
     if (currentIndex < currentFunctions.length - 1) {
         currentIndex++;
+        controlFlashcardButtons();
         isShowingFront = currentFunctionsShowFunctionFirst[currentIndex];
         updateFlashcard();
     }
