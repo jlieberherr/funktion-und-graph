@@ -101,14 +101,11 @@ function showFlashcards() {
     const selectedDirection = getSelectedDirection();
     if (selectedDirection === 'both') {
         currentFunctionsShowFunctionFirst = currentFunctions.map(_ => Math.random() >= 0.5);
-    }
-    else if (selectedDirection === 'functionToGraph') {
+    } else if (selectedDirection === 'functionToGraph') {
         currentFunctionsShowFunctionFirst = currentFunctions.map(_ => true);
-    }
-    else if (selectedDirection ==='graphToFunction') {
+    } else if (selectedDirection === 'graphToFunction') {
         currentFunctionsShowFunctionFirst = currentFunctions.map(_ => false);
-    }
-    else {
+    } else {
         throw 'direction ' + selectedDirection + ' not valid';
     }
     showFlashcard();
