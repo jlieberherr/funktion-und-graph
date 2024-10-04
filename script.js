@@ -2,7 +2,6 @@ let isShowingFront = true;
 let currentFunctions = [];
 let currentFunction = '';
 let currentIndex = 0;
-let currentType = '';
 let board = null;
 let isRandomOrder = true; // Default is random order (Ja)
 
@@ -13,7 +12,7 @@ function generateButton(functionData) {
     const button = document.createElement('button');
     button.className = 'button';
     button.setAttribute('id', functionData['id']);
-    button.setAttribute('data-isSelected', 'true');
+    button.setAttribute('data-isSelected', 'false');
     button.style.backgroundColor = functionData["color"];
     button.innerHTML = functionData["description"];
     button.setAttribute('onclick', 'changeStatus(this)');
@@ -29,13 +28,14 @@ function generateAllButtons() {
             functionDataPerId[functionData["id"]] = functionData;
         }
     )
+    setStatusOfButtons();
 }
 
 function setAllButtonsTo(trueOrFalse) {
     functionButtons.forEach(button => {
         button.setAttribute('data-isSelected', trueOrFalse);
     });
-    setStatusOfStartButton();
+    setStatusOfButtons();
 }
 
 
@@ -47,16 +47,28 @@ function getSelectedButtons() {
 function changeStatus(button) {
     const isSelected = button.getAttribute('data-isSelected') === 'true';
     button.setAttribute('data-isSelected', !isSelected);
-    setStatusOfStartButton();
+    setStatusOfButtons();
 }
 
 function isAtMostOneFunctionTypeSelected() {
     return getSelectedButtons().length !== 0;
 }
 
-function setStatusOfStartButton() {
+function setStatusOfButtons() {
     const startButton = document.getElementById('start-button');
-    isAtMostOneFunctionTypeSelected() === false ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
+    const randomYesButton = document.getElementById('option-yes');
+    const randomNoButton = document.getElementById('option-no');
+
+    const nbSelectedButtons = getSelectedButtons().length;
+    nbSelectedButtons === 0 ? startButton.classList.add('disabled') : startButton.classList.remove('disabled');
+    if (nbSelectedButtons > 1) {
+        randomYesButton.classList.add('disabled');
+        randomNoButton.classList.add('disabled');
+    } else {
+        randomYesButton.classList.remove('disabled');
+        randomNoButton.classList.remove('disabled');
+    }
+
 }
 
 

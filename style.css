@@ -7,6 +7,11 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #f8f9fa;
+    font-size: 20px;
+}
+
+p {
+    margin: 4px;
 }
 
 #entry-page, #flashcard {
@@ -32,7 +37,6 @@ body, html {
 .button {
     width: 100%;
     border: none;
-    font-size: 20px;
     font-weight: bold;
     color: white;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -52,11 +56,11 @@ body, html {
 }
 
 button[data-isSelected="false"] {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .dropdown-container, .select-all-or-none-button-container {
-    margin-top: 5px;
+    margin-top: 4px;
     display: flex; /* Use flexbox for horizontal alignment */
     align-items: center; /* Vertically aligns the items in the container */
     width: 100%;
@@ -64,7 +68,6 @@ button[data-isSelected="false"] {
 
 .dropdown-container label, .select-all-or-none-button-container label {
     margin-right: 10px; /* Adds space between the label and select */
-    font-size: 20px;
     font-weight: bold;
     align-content: center;
     margin-top: 0;
@@ -77,7 +80,6 @@ button[data-isSelected="false"] {
     padding-left: 2px;
     padding-right: 5px;
     margin-right: 10px;
-    font-size: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
@@ -91,7 +93,6 @@ button[data-isSelected="false"] {
 
 .random-order-container label {
     margin-right: 10px; /* Adds space between the label and select */
-    font-size: 20px;
     font-weight: bold;
     align-content: center;
     margin-top: 0;
@@ -107,7 +108,6 @@ button[data-isSelected="false"] {
 }
 
 .btn-group button, .buttonSelection button {
-    font-size: 20px;
     cursor: pointer;
     width: 60px;
     padding-left: 0;
