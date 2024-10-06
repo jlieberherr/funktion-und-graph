@@ -28,15 +28,18 @@
 <body>
 
 <div id="entry-page" class="active">
-    <p><strong>Wähle aus und drücke Start:</strong></p>
-    <div id="button-container"></div>
-    <div class="select-all-or-none-button-container">
-        <label for="buttonSelection">Auswählen:</label>
-        <div id="buttonSelection" class="buttonSelection">
-            <button type="button" class="btn btn-outline-primary" onclick="setAllButtonsTo(true)">Alle</button>
-            <button type="button" class="btn btn-outline-secondary" onclick="setAllButtonsTo(false)">Keine</button>
+    <div class="first-line-container">
+        <span class="text first-line-text">Wähle: </span>
+        <div class="first-line-buttons">
+            <button class="btn deselect-all-button" onclick="setAllButtonsTo(false)">
+                <i class="far fa-square"></i>
+            </button>
+            <button class="btn select-all-button" onclick="setAllButtonsTo(true)">
+                <i class="far fa-check-square"></i>
+            </button>
         </div>
     </div>
+    <div id="button-container"></div>
 
     <div class="dropdown-container">
         <label for="modeSelection">Richtung:</label>

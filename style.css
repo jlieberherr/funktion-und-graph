@@ -10,7 +10,7 @@ body, html {
     font-size: 20px;
 }
 
-p {
+span {
     margin: 4px;
 }
 
@@ -31,6 +31,24 @@ p {
 
 #entry-page {
     flex-direction: column;
+}
+
+.first-line-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.first-line-text {
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.first-line-buttons {
+    display: flex;
+    gap: 4px;
 }
 
 
@@ -59,7 +77,7 @@ button[data-isSelected="false"] {
     opacity: 0.4;
 }
 
-.dropdown-container, .select-all-or-none-button-container {
+.dropdown-container {
     margin-top: 4px;
     display: flex; /* Use flexbox for horizontal alignment */
     align-items: center; /* Vertically aligns the items in the container */
@@ -107,7 +125,7 @@ button[data-isSelected="false"] {
     height: 100%;
 }
 
-.btn-group button, .buttonSelection button {
+.btn-group button, button {
     cursor: pointer;
     width: 60px;
     padding-left: 0;
@@ -144,6 +162,13 @@ button[data-isSelected="false"] {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.select-all-button, .deselect-all-button {
+    padding: 0;
+    margin: 0;
+    font-size: 32px;
+    cursor: pointer;
 }
 
 .flip-button, .back-button, .prev-button, .next-button {
