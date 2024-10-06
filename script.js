@@ -60,7 +60,6 @@ function setStatusOfButtons() {
 function controlFlashcardButtons() {
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
-
     currentIndex === 0 ? prevButton.classList.add('disabled') : prevButton.classList.remove('disabled');
     currentIndex === currentFunctions.length - 1 ? nextButton.classList.add('disabled') : nextButton.classList.remove('disabled');
 }
@@ -91,6 +90,10 @@ function getSelectedDirection() {
     return document.getElementById('modeSelection').value;
 }
 
+function getNbOfCardsToShow() {
+    return document.getElementById('nbCards').value;
+}
+
 function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 }
@@ -102,6 +105,10 @@ function showFlashcards() {
         let functionsToAdd = functionDataPerId[id]["functions"];
         currentFunctions = currentFunctions.concat(functionsToAdd)
     })
+    const nbFunctionsToShow = getNbOfCardsToShow();
+    if (nbFunctionsToShow !== "all") {
+        currentFunctions = currentFunctions.slice(0, parseInt(nbFunctionsToShow))
+    }
     if (isRandomSort()) {
         currentFunctions = shuffleArray(currentFunctions);
     }
