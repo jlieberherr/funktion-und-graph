@@ -156,6 +156,7 @@ function updateFlashcard() {
         const currentFunction = getCurrentFunction();
         plotGraph(currentFunction.equation, currentFunction.points, currentFunction.boundingbox);
     }
+    document.getElementById("card-number").textContent = (currentIndex + 1) + "/" + currentFunctions.length;
 }
 
 function flipCard() {
