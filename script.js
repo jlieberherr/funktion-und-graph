@@ -140,15 +140,17 @@ function getCurrentFunction() {
 function updateFlashcard() {
     const flashcardContent = document.getElementById('flashcard-content');
     const graphDiv = document.getElementById('graph');
+    const currentFunction = getCurrentFunction();
 
     if (isShowingFront) {
         // noinspection JSUnresolvedVariable
-        const parsedFunction = math.parse(getCurrentFunction().equation);
+        const parsedFunction = math.parse(currentFunction.equation);
+        const domain = currentFunction.domain !== undefined ? currentFunction.domain : '\\mathbb{R}';
         // noinspection JSUnresolvedFunction
         const latexString = `
       f = \\left\\{ 
       \\begin{array}{l}
-      \\mathbb{R} \\to \\mathbb{R} \\\\
+      ${domain} \\to \\mathbb{R} \\\\
       x \\mapsto ${parsedFunction.toTex({parenthesis: 'auto'})}
       \\end{array} 
       \\right.
@@ -162,7 +164,6 @@ function updateFlashcard() {
         flashcardContent.innerHTML = '';
         flashcardContent.style.display = 'none';
         graphDiv.style.display = 'flex';
-        const currentFunction = getCurrentFunction();
         plotGraph(currentFunction);
     }
     document.getElementById("card-number").textContent = (currentIndex + 1) + "/" + currentFunctions.length;
