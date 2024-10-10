@@ -7,22 +7,22 @@ const functionsData = [
             {"equation": "x", "points": [{"x": 0}, {"x": -2}]},
             {"equation": "2x", "points": [{"x": -2}, {"x": 3}]},
             {"equation": "-x+5", "points": [{"x": 0}, {"x": 2}]},
-            {"equation": "2.5", "points": [{"x": -3.5, labeled: true}, {"x": 1, labeled: true}]},
+            {"equation": "2.5", "points": [{"x": -3.5, "labeled": true}, {"x": 1, "labeled": true}]},
             {"equation": "3x-2", "points": [{"x": -1}, {"x": 2}]},
             {"equation": "-2x+4", "points": [{"x": 1}, {"x": 3}]},
             {"equation": "0.5x-1", "points": [{"x": -2}, {"x": 2}]},
             {"equation": "5/3x-2", "points": [{"x": 0}, {"x": 3}]},
             {"equation": "3/5x-2", "points": [{"x": -5}, {"x": 5}]},
-            {"equation": "2/5x", "points": [{"x": 0}, {"x": 1, labeled: true}]},
+            {"equation": "2/5x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
             {"equation": "0/5x-2", "points": [{"x": 0}, {"x": 3}]},
-            {"equation": "-(5/2)x-3/2", "points": [{"x": 0, labeled: true}, {"x": -3}]},
+            {"equation": "-(5/2)x-3/2", "points": [{"x": 0, "labeled": true}, {"x": -3}]},
             {"equation": "-2", "points": [{"x": -2}, {"x": 2}]},
-            {"equation": "7/4x+1", "points": [{"x": 0}, {"x": 3, labeled: true}]},
-            {"equation": "(-1/3)x-0.5", "points": [{"x": -3, labeled: true}, {"x": 4, labeled: true}]},
+            {"equation": "7/4x+1", "points": [{"x": 0}, {"x": 3, "labeled": true}]},
+            {"equation": "(-1/3)x-0.5", "points": [{"x": -3, "labeled": true}, {"x": 4, "labeled": true}]},
             {"equation": "-x+4", "points": [{"x": -1}, {"x": 3}]},
             {"equation": "-1x+2", "points": [{"x": -2}, {"x": 2}]},
-            {"equation": "7x-5", "points": [{"x": 0.5, labeled: true}, {"x": 1}]},
-            {"equation": "-6x+8", "points": [{"x": 2}, {"x": 0.5, labeled: true, "yLabel": 5}]},
+            {"equation": "7x-5", "points": [{"x": 0.5, "labeled": true}, {"x": 1}]},
+            {"equation": "-6x+8", "points": [{"x": 2}, {"x": 0.5, "labeled": true, "yLabel": 5}]},
             {"equation": "-3x", "points": [{"x": -1}, {"x": 1}]}
         ]
     },
@@ -39,8 +39,8 @@ const functionsData = [
             {"equation": "x^2 + 4x", "points": [{"x": -2}, {"x": 0}]},
             {"equation": "-x^2 + 6x", "points": [{"x": 3}, {"x": 0}], "boundingbox": [-4, 10, 10, -4]},
             {"equation": "x^2 - 5x + 6", "points": [{"x": 0}, {"x": 2}, {"x": 3}]},
-            {"equation": "2x^2 + 3x - 1", "points": [{"x": -0.75, labeled: true}, {"x": 1}]},
-            {"equation": "x^2 + x", "points": [{"x": -0.5, labeled: true}, {"x": 2}]},
+            {"equation": "2x^2 + 3x - 1", "points": [{"x": -0.75, "labeled": true}, {"x": 1}]},
+            {"equation": "x^2 + x", "points": [{"x": -0.5, "labeled": true}, {"x": 2}]},
             {"equation": "-3x^2 + 2", "points": [{"x": 0}, {"x": 1}]},
             {"equation": "-x^2 + 6x - 5", "points": [{"x": 3}, {"x": 0}]},
             {"equation": "0.5x^2 + 2x + 1", "points": [{"x": -4}, {"x": -2}]},
@@ -50,7 +50,7 @@ const functionsData = [
             {"equation": "-(3/2)x^2", "points": [{"x": 0}, {"x": 2}]},
             {"equation": "(4/5)x^2", "points": [{"x": 0}, {"x": 1}]},
             {"equation": "3x^2 - 5", "points": [{"x": 0}, {"x": 2}]},
-            {"equation": "-x^2 - x + 1", "points": [{"x": -0.5, labeled: true}, {"x": 1}]}
+            {"equation": "-x^2 - x + 1", "points": [{"x": -0.5, "labeled": true}, {"x": 1}]}
         ]
     },
     {
@@ -72,7 +72,7 @@ const functionsData = [
         "description": "Exponentialfunktionen",
         "color": "green",
         "functions": [
-            {"equation": "e^x"},
+            {"equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true, "yLabel": "e"}]},
             {"equation": "2^x"},
             {"equation": "3^x"},
             {"equation": "e^-x"},
