@@ -58,13 +58,26 @@ const functionsData = [
         "description": "Potenz- und Wurzelfunktionen",
         "color": "darkblue",
         "functions": [
-            {"equation": "x^3"},
-            {"equation": "1/x"},
-            {"equation": "1/(x^2)"},
-            {"equation": "x^4"},
-            {"equation": "sqrt(x)"},
-            {"equation": "sqrt(x+2)-1"},
-            {"equation": "5/(x-1)"}
+            {"equation": "x^3", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
+            {"equation": "1/x", "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}]},
+            {"equation": "1/(x^2)", "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}]},
+            {"equation": "x^4", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
+            {"equation": "sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}]},
+            {"equation": "sqrt(x+2)-1", "points": [{"x": -2}, {"x": 0}, {"x": 2}]},
+            {"equation": "1/(x-1)", "points": [{"x": 0}, {"x": 2}, {"x": 3, "labeled": true}]},
+            {"equation": "x^3 - 1", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
+            {"equation": "2/x", "points": [{"x": 1}, {"x": 2}, {"x": -0.5}]},
+            {"equation": "-(1/x)", "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}]},
+            {"equation": "-(1/(x^2))", "points": [{"x": 1}, {"x": 1}, {"x": -2, "labeled": true}]},
+            {"equation": "1/x - 2", "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}]},
+            {"equation": "-1/(x - 2)", "points": [{"x": 1}, {"x": 3}, {"x": -1, "labeled": true}]},
+            {"equation": "1/(x + 3)^2", "points": [{"x": -2}, {"x": -4}, {"x": 2, "labeled": true}]},
+            {"equation": "2x^3", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
+            {"equation": "-(1/(x^2)) + 3", "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}]},
+            {"equation": "2sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}]},
+            {"equation": "sqrt(x + 3)", "points": [{"x": -3}, {"x": -2}, {"x": 1}]},
+            {"equation": "-2sqrt(x + 2) + 5", "points": [{"x": -2}, {"x": -1}, {"x": 2}]},
+            {"equation": "4/x^2 - 2", "points": [{"x": -2}, {"x": -1}, {"x": 1}, {"x": 2}]}
         ]
     },
     {
