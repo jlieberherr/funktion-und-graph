@@ -105,12 +105,14 @@ function showFlashcards() {
         let functionsToAdd = functionDataPerId[id]["functions"];
         currentFunctions = currentFunctions.concat(functionsToAdd)
     })
+
+    if (isRandomSort()) {
+        currentFunctions = shuffleArray(currentFunctions);
+    }
+
     const nbFunctionsToShow = getNbOfCardsToShow();
     if (nbFunctionsToShow !== "all") {
         currentFunctions = currentFunctions.slice(0, parseInt(nbFunctionsToShow))
-    }
-    if (isRandomSort()) {
-        currentFunctions = shuffleArray(currentFunctions);
     }
 
     const selectedDirection = getSelectedDirection();
