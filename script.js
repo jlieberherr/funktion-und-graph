@@ -163,7 +163,7 @@ function updateFlashcard() {
         flashcardContent.style.display = 'none';
         graphDiv.style.display = 'flex';
         const currentFunction = getCurrentFunction();
-        plotGraph(currentFunction.equation, currentFunction.points, currentFunction.boundingbox);
+        plotGraph(currentFunction);
     }
     document.getElementById("card-number").textContent = (currentIndex + 1) + "/" + currentFunctions.length;
 }
@@ -196,7 +196,10 @@ function goBack() {
     document.getElementById('entry-page').classList.add('active');
 }
 
-function plotGraph(funcString, points, boundingbox) {
+function plotGraph(currentFunctionParams) {
+    let funcString = currentFunctionParams.equation;
+    let points = currentFunctionParams.points !== undefined ? currentFunctionParams.points : [];
+    let boundingbox = currentFunctionParams.boundingbox;
     if (board !== null) {
         // noinspection JSUnresolvedVariable
         JXG.JSXGraph.freeBoard(board);
@@ -204,7 +207,7 @@ function plotGraph(funcString, points, boundingbox) {
 
     // noinspection JSUnresolvedVariable
     board = JXG.JSXGraph.initBoard('graph', {
-        boundingbox: boundingbox,
+        boundingbox: boundingbox !== undefined ? boundingbox : [-7, 7, 7, -7],
         axis: true,
         keepAspectRatio: true,
         showNavigation: false,
@@ -224,9 +227,16 @@ function plotGraph(funcString, points, boundingbox) {
     board.create('functiongraph', [f], {strokeColor: 'blue', strokeWidth: 2});
 
     points.forEach(point => {
-        const [x, y] = point;
-        board.create('point', [x, y], {size: 4, color: 'red', name: '', fixed: true});
-        board.create('text', [x + 0.2, y + 0.2, `(${x}|${y})`], {fontSize: 12, fixed: true});
+        let x = point.x;
+        // noinspection JSUnresolvedVariable
+        let y = point.y !== undefined ? point.y : parsedFunction.evaluate({x: x});
+        board.create('point', [x, y], {size: 1, color: 'red', name: '', fixed: true});
+        let labeled = point.labeled !== undefined ? point.labeled : false;
+        if (labeled) {
+            let xLabel = point.xLabel !== undefined ? point.xLabel : x.toString();
+            let yLabel = point.yLabel !== undefined ? point.yLabel : math.format(math.fraction(y));
+            board.create('text', [x + 0.2, y + 0.2, `(${xLabel}|${yLabel})`], {fontSize: 14, fixed: true});
+        }
     });
 }
 
