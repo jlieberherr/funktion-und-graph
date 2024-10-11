@@ -227,16 +227,58 @@ function plotGraph(currentFunctionParams) {
 
     board.create('functiongraph', [f], {strokeColor: 'blue', strokeWidth: 2});
 
+
+    function getLabels(labelX_, labelY_, x, funcStr) {
+        let labelX;
+        let labelY;
+        if (labelX_ !== undefined) {
+            labelX = labelX_;
+        } else {
+            let xStr = x.toString();
+            let xParsed = math.parse(xStr);
+            labelX = math.simplify(xParsed).toString().replace(/ /g, "").replace("(", "{").replace(")", "}");
+        }
+        if (labelY_ !== undefined) {
+            labelY = labelY_;
+        } else {
+            let xStr = x.toString();
+            let xParsed = math.parse(xStr);
+            labelY = math.simplify(funcStr, {x: xParsed}).toString().replace(/ /g, "").replace("(", "{").replace(")", "}");
+        }
+        return [labelX, labelY];
+    }
+    function getYLabel(label, parsedFunction, x) {
+        if (label !== undefined) {
+            return label;
+        }
+        else {
+            return math.simplify(parsedFunction, {x: x});
+        }
+    }
+
+    function getXValue(x_) {
+        let xStr = x_.toString();
+        return math.parse(xStr).evaluate();
+    }
+
+    function getYValue(parsedFunction, x_) {
+        return parsedFunction.evaluate({x: x_});
+    }
+
     points.forEach(point => {
-        let x = point.x;
+        let xIn = point.x;
+        let x = getXValue(xIn);
         // noinspection JSUnresolvedVariable
-        let y = point.y !== undefined ? point.y : parsedFunction.evaluate({x: x});
+        let y = point.y !== undefined ? point.y : getYValue(parsedFunction, x);
         board.create('point', [x, y], {size: 1, color: 'red', name: '', fixed: true});
         let labeled = point.labeled !== undefined ? point.labeled : false;
         if (labeled) {
-            let xLabel = point.xLabel !== undefined ? point.xLabel : x.toString();
-            let yLabel = point.yLabel !== undefined ? point.yLabel : math.format(math.fraction(y));
-            board.create('text', [x + 0.2, y + 0.2, `(${xLabel}|${yLabel})`], {fontSize: 14, fixed: true});
+            [xLabel, yLabel] = getLabels(point.xLabel, point.yLabel, xIn, funcString);
+            console.log("x: ", xLabel, "y: ", yLabel)
+            board.create(
+                'text',
+                [x + 0.2, y + 0.2, `(${xLabel} | ${yLabel})`],
+                {fontSize: 14, fixed: true});
         }
     });
 }

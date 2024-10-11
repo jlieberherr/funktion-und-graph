@@ -22,7 +22,7 @@ const functionsData = [
             {"equation": "-x+4", "points": [{"x": -1}, {"x": 3}]},
             {"equation": "-1x+2", "points": [{"x": -2}, {"x": 2}]},
             {"equation": "7x-5", "points": [{"x": 0.5, "labeled": true}, {"x": 1}]},
-            {"equation": "-6x+8", "points": [{"x": 2}, {"x": 0.5, "labeled": true, "yLabel": 5}]},
+            {"equation": "-6x+8", "points": [{"x": 2}, {"x": 0.5, "labeled": true}]},
             {"equation": "-3x", "points": [{"x": -1}, {"x": 1}]}
         ]
     },
@@ -85,10 +85,10 @@ const functionsData = [
         "description": "Exponentialfunktionen",
         "color": "green",
         "functions": [
-            {"equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true, "yLabel": "e"}]},
+            {"equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
             {"equation": "2^x", "points": [{"x": 0}, {"x": 2}]},
             {"equation": "3^x", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
-            {"equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true, "yLabel": "e"}]},
+            {"equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
             {"equation": "2^-x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
             {"equation": "(1/2)^-x", "points": [{"x": 0}, {"x": 1}]},
             {"equation": "3^x - 3", "points": [{"x": 0}, {"x": 1}, {"x": 2}]},
@@ -98,7 +98,7 @@ const functionsData = [
             {"equation": "2^(x-2)", "points": [{"x": 2}, {"x": 4}]},
             {"equation": "(1/3)^(x+2) - 1", "points": [{"x": -4}, {"x": -2}], boundingbox: [-5, 11, 11, -5]},
             {"equation": "10^x", "points": [{"x": 0}, {"x": 1}], boundingbox: [-30, 30, 30, -30]},
-            {"equation": "e^(2x)", "points": [{"x": 0}, {"x": -1, "labeled": true, "yLabel": "1/e^2"}]},
+            {"equation": "e^(2x)", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
             {"equation": "2^(0.5x)", "points": [{"x": 0}, {"x": 4}]},
             {"equation": "(3/2)^x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
             {"equation": "10^(-x)", "points": [{"x": 0}, {"x": -1}], boundingbox: [-30, 30, 30, -30]},
@@ -112,9 +112,9 @@ const functionsData = [
         "description": "Logarithmusfunktionen",
         "color": "darkgreen",
         "functions": [
-            {"equation": "log(x)"},
-            {"equation": "log(x, 2)"},
-            {"equation": "log(x, 0.5)"}
+            {"equation": "log(x)", "points": [{"x": 1}, {"x": "e", "labeled": true}]},
+            {"equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}]},
+            {"equation": "log(x, 0.5)", "points": [{"x": 1}, {"x": 0.5, "labeled": true}]}
         ]
     },
     {
