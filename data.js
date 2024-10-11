@@ -114,7 +114,14 @@ const functionsData = [
         "functions": [
             {"equation": "log(x)", "points": [{"x": 1}, {"x": "e", "labeled": true}]},
             {"equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}]},
-            {"equation": "log(x, 0.5)", "points": [{"x": 1}, {"x": 0.5, "labeled": true}]}
+            {"equation": "log(x, 0.5)", "points": [{"x": 1}, {"x": 0.5, "labeled": true}]},
+            {"equation": "log(-x)", "points": [{"x": -1}, {"x": "-e", "labeled": true}]},
+            {"equation": "-log(x, 2)", "points": [{"x": 1}, {"x": 2}]},
+            {"equation": "log(x) - 1", "points": [{"x": 1}, {"x": "e"}]},
+            {"equation": "log(x, 1/10)", "points": [{"x": 1}, {"x": 10}], boundingbox: [-15, 15, 15, -15]},
+            {"equation": "log(x, 3)", "points": [{"x": 1}, {"x": 3}]},
+            {"equation": "log(x, 10)", "points": [{"x": 1}, {"x": 10}], boundingbox: [-15, 15, 15, -15]},
+            {"equation": "-log(x + 2, 3)", "points": [{"x": -1}, {"x": 1}]},
         ]
     },
     {

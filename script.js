@@ -274,7 +274,6 @@ function plotGraph(currentFunctionParams) {
         let labeled = point.labeled !== undefined ? point.labeled : false;
         if (labeled) {
             [xLabel, yLabel] = getLabels(point.xLabel, point.yLabel, xIn, funcString);
-            console.log("x: ", xLabel, "y: ", yLabel)
             board.create(
                 'text',
                 [x + 0.2, y + 0.2, `(${xLabel} | ${yLabel})`],
