@@ -48,7 +48,7 @@ const functionsData = [
             {"equation": "-2x^2 - 4x + 1", "points": [{"x": -1}, {"x": 1}]},
             {"equation": "-x^2", "points": [{"x": 0}, {"x": 1}]},
             {"equation": "-(3/2)x^2", "points": [{"x": 0}, {"x": 2}]},
-            {"equation": "(4/5)x^2", "points": [{"x": 0}, {"x": 1}]},
+            {"equation": "(4/5)x^2", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
             {"equation": "3x^2 - 5", "points": [{"x": 0}, {"x": 2}]},
             {"equation": "-x^2 - x + 1", "points": [{"x": -0.5, "labeled": true}, {"x": 1}]}
         ]
