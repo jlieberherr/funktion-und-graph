@@ -210,13 +210,38 @@ function plotGraph(currentFunctionParams) {
     board = JXG.JSXGraph.initBoard('graph', {
         boundingbox: boundingbox !== undefined ? boundingbox : [-7, 7, 7, -7],
         axis: true,
+        defaultAxes: {
+            x: {
+                ticks: {
+                    insertTicks: false,
+                    minorTicks: 3,
+                    ticksDistance: 1,
+                }
+            },
+            y: {
+                ticks: {
+                    insertTicks: false,
+                    minorTicks: 3,
+                    ticksDistance: 1,
+                }
+            }
+        },
+        grid: {
+            majorStep: 1
+        },
         keepAspectRatio: true,
         showNavigation: false,
-        grid: true,
-        gridX: 1,
-        gridY: 1,
+        zoom: {
+            enabled: true,
+            factorX: 1.25,
+            factorY: 1.25,
+        },
+        pan: {
+            enabled: true,   // Enable panning
+        },
         showCopyright: false
     });
+
 
     // noinspection JSUnresolvedVariable
     const parsedFunction = math.compile(funcString);
@@ -225,7 +250,18 @@ function plotGraph(currentFunctionParams) {
         return parsedFunction.evaluate({x: x_});
     };
 
+
     board.create('functiongraph', [f], {strokeColor: 'blue', strokeWidth: 2});
+
+    if (currentFunctionParams.asymptotes !== undefined) {
+        currentFunctionParams.asymptotes.forEach(as => {
+            const asParsed = math.compile(as);
+            const asCurve = function (x_, y_) {
+                return asParsed.evaluate({x: x_, y: y_});
+            };
+            board.create('implicitcurve', [asCurve], {strokeColor: 'blue', strokeWidth: 1, dash: 2});
+        })
+    }
 
 
     function getLabels(labelX_, labelY_, x, funcStr) {
@@ -247,11 +283,11 @@ function plotGraph(currentFunctionParams) {
         }
         return [labelX, labelY];
     }
+
     function getYLabel(label, parsedFunction, x) {
         if (label !== undefined) {
             return label;
-        }
-        else {
+        } else {
             return math.simplify(parsedFunction, {x: x});
         }
     }

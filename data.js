@@ -58,16 +58,21 @@ const functionsData = [
         "description": "Potenz- und Wurzelfunktionen",
         "color": "darkblue",
         "functions": [
-            {"equation": "x^3", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
+            {
+                "equation": "x^3",
+                "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]
+            },
             {
                 "equation": "1/x",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y"]
             },
             {
                 "equation": "1/(x^2)",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y"]
             },
             {"equation": "x^4", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
             {"equation": "sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
@@ -75,44 +80,52 @@ const functionsData = [
             {
                 "equation": "1/(x-1)",
                 "points": [{"x": 0}, {"x": 2}, {"x": 3, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{1\\}"
+                "domain": "\\mathbb{R} \\setminus \\{1\\}",
+                "asymptotes": ["x-1", "y"]
             },
             {"equation": "x^3 - 1", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
             {
                 "equation": "2/x",
                 "points": [{"x": 1}, {"x": 2}, {"x": -0.5}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y"]
             },
             {
                 "equation": "-(1/x)",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y"]
             },
             {
                 "equation": "-(1/(x^2))",
                 "points": [{"x": 1}, {"x": 1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y"]
             },
             {
                 "equation": "1/x - 2",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y+2"]
             },
             {
                 "equation": "-1/(x - 2)",
                 "points": [{"x": 1}, {"x": 3}, {"x": -1, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{2\\}"
+                "domain": "\\mathbb{R} \\setminus \\{2\\}",
+                "asymptotes": ["x-2", "y"]
             },
             {
                 "equation": "1/(x + 3)^2",
                 "points": [{"x": -2}, {"x": -4}, {"x": 2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{-3\\}"
+                "domain": "\\mathbb{R} \\setminus \\{-3\\}",
+                "asymptotes": ["x+3", "y"]
             },
             {"equation": "2x^3", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
             {
                 "equation": "-(1/(x^2)) + 3",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y-3"]
             },
             {"equation": "2sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
             {"equation": "sqrt(x - 3)", "points": [{"x": 3}, {"x": 4}, {"x": 7}], "domain": "[3, \\infty )"},
@@ -120,7 +133,8 @@ const functionsData = [
             {
                 "equation": "4/x^2 - 2",
                 "points": [{"x": -2}, {"x": -1}, {"x": 1}, {"x": 2}],
-                "domain": "\\mathbb{R} \\setminus \\{0\\}"
+                "domain": "\\mathbb{R} \\setminus \\{0\\}",
+                "asymptotes": ["x", "y+2"]
             }
         ]
     },
@@ -129,26 +143,41 @@ const functionsData = [
         "description": "Exponentialfunktionen",
         "color": "green",
         "functions": [
-            {"equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
-            {"equation": "2^x", "points": [{"x": 0}, {"x": 2}]},
-            {"equation": "3^x", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
-            {"equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
-            {"equation": "2^-x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
-            {"equation": "(1/2)^-x", "points": [{"x": 0}, {"x": 1}]},
-            {"equation": "3^x - 3", "points": [{"x": 0}, {"x": 1}, {"x": 2}]},
-            {"equation": "2(sqrt(2))^-x - 2", "points": [{"x": -2}, {"x": 0}, {"x": 2}]},
-            {"equation": "4(4^(x/3))", "points": [{"x": -3}, {"x": 0}]},
-            {"equation": "3^(x-4) - 2", "points": [{"x": 4}, {"x": 5}]},
-            {"equation": "2^(x-2)", "points": [{"x": 2}, {"x": 4}]},
-            {"equation": "(1/3)^(x+2) - 1", "points": [{"x": -4}, {"x": -2}], boundingbox: [-5, 11, 11, -5]},
-            {"equation": "10^x", "points": [{"x": 0}, {"x": 1}], boundingbox: [-30, 30, 30, -30]},
-            {"equation": "e^(2x)", "points": [{"x": 0}, {"x": -1, "labeled": true}]},
-            {"equation": "2^(0.5x)", "points": [{"x": 0}, {"x": 4}]},
-            {"equation": "(3/2)^x", "points": [{"x": 0}, {"x": 1, "labeled": true}]},
-            {"equation": "10^(-x)", "points": [{"x": 0}, {"x": -1}], boundingbox: [-30, 30, 30, -30]},
-            {"equation": "0.1^x", "points": [{"x": 0}, {"x": -1}], boundingbox: [-30, 30, 30, -30]},
-            {"equation": "3^(x+1)", "points": [{"x": 0}, {"x": -1}]},
-            {"equation": "5^(-x) + 1", "points": [{"x": 0}, {"x": -1}]}
+            {"equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {"equation": "2^x", "points": [{"x": 0}, {"x": 2}], "asymptotes": ["y"]},
+            {"equation": "3^x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
+            {"equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
+            {"equation": "2^-x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {"equation": "(1/2)^-x", "points": [{"x": 0}, {"x": 1}], "asymptotes": ["y"]},
+            {"equation": "3^x - 3", "points": [{"x": 0}, {"x": 1}, {"x": 2}], "asymptotes": ["y+3"]},
+            {"equation": "2(sqrt(2))^-x - 2", "points": [{"x": -2}, {"x": 0}, {"x": 2}], "asymptotes": ["y+2"]},
+            {"equation": "4(4^(x/3))", "points": [{"x": -3}, {"x": 0}], "asymptotes": ["y"]},
+            {"equation": "3^(x-4) - 2", "points": [{"x": 4}, {"x": 5}], "asymptotes": ["y+2"]},
+            {"equation": "2^(x-2)", "points": [{"x": 2}, {"x": 4}], "asymptotes": ["y"]},
+            {
+                "equation": "(1/3)^(x+2) - 1",
+                "points": [{"x": -4}, {"x": -2}],
+                boundingbox: [-5, 11, 11, -5],
+                "asymptotes": ["y+1"]
+            },
+            {"equation": "10^x", "points": [{"x": 0}, {"x": 1}], boundingbox: [-15, 15, 15, -15], "asymptotes": ["y"]},
+            {"equation": "e^(2x)", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
+            {"equation": "2^(0.5x)", "points": [{"x": 0}, {"x": 4}], "asymptotes": ["y"]},
+            {"equation": "(3/2)^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {
+                "equation": "10^(-x)",
+                "points": [{"x": 0}, {"x": -1}],
+                boundingbox: [-15, 15, 15, -15],
+                "asymptotes": ["y"]
+            },
+            {
+                "equation": "0.1^x",
+                "points": [{"x": 0}, {"x": -1}],
+                boundingbox: [-15, 15, 15, -15],
+                "asymptotes": ["y"]
+            },
+            {"equation": "3^(x+1)", "points": [{"x": 0}, {"x": -1}], "asymptotes": ["y"]},
+            {"equation": "5^(-x) + 1", "points": [{"x": 0}, {"x": -1}], "asymptotes": ["y-1"]}
         ]
     },
     {
@@ -156,26 +185,53 @@ const functionsData = [
         "description": "Logarithmusfunktionen",
         "color": "darkgreen",
         "functions": [
-            {"equation": "log(x)", "points": [{"x": 1}, {"x": "e", "labeled": true}], "domain": "(0, \\infty )"},
-            {"equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty )"},
-            {"equation": "log(x, 0.5)", "points": [{"x": 1}, {"x": 0.5, "labeled": true}], "domain": "(0, \\infty )"},
-            {"equation": "log(-x)", "points": [{"x": -1}, {"x": "-e", "labeled": true}], "domain": "(-\\infty, 0)"},
-            {"equation": "-log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty)"},
-            {"equation": "log(x) - 1", "points": [{"x": 1}, {"x": "e"}], "domain": "(0, \\infty )"},
+            {
+                "equation": "log(x)",
+                "points": [{"x": 1}, {"x": "e", "labeled": true}],
+                "domain": "(0, \\infty )",
+                "asymptotes": ["x"]
+            },
+            {"equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
+            {
+                "equation": "log(x, 0.5)",
+                "points": [{"x": 1}, {"x": 0.5, "labeled": true}],
+                "domain": "(0, \\infty )",
+                "asymptotes": ["x"]
+            },
+            {
+                "equation": "log(-x)",
+                "points": [{"x": -1}, {"x": "-e", "labeled": true}],
+                "domain": "(-\\infty, 0)",
+                "asymptotes": ["x"]
+            },
+            {"equation": "-log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty)", "asymptotes": ["x"]},
+            {
+                "equation": "log(x) - 1",
+                "points": [{"x": 1}, {"x": "e"}],
+                "domain": "(0, \\infty )",
+                "asymptotes": ["x"]
+            },
             {
                 "equation": "log(x, 1/10)",
                 "points": [{"x": 1}, {"x": 10}],
                 boundingbox: [-15, 15, 15, -15],
-                "domain": "(0, \\infty )"
+                "domain": "(0, \\infty )",
+                "asymptotes": ["x"]
             },
-            {"equation": "log(x, 3)", "points": [{"x": 1}, {"x": 3}], "domain": "(0, \\infty )"},
+            {"equation": "log(x, 3)", "points": [{"x": 1}, {"x": 3}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
             {
                 "equation": "log(x, 10)",
                 "points": [{"x": 1}, {"x": 10}],
                 boundingbox: [-15, 15, 15, -15],
-                "domain": "(0, \\infty )"
+                "domain": "(0, \\infty )",
+                "asymptotes": ["x"]
             },
-            {"equation": "-log(x + 2, 3)", "points": [{"x": -1}, {"x": 1}], "domain": "(-2, \\infty )"},
+            {
+                "equation": "-log(x + 2, 3)",
+                "points": [{"x": -1}, {"x": 1}],
+                "domain": "(-2, \\infty )",
+                "asymptotes": ["x+2"]
+            },
         ]
     },
     {
