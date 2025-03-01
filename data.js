@@ -59,57 +59,57 @@ const functionsData = [
         "color": "darkblue",
         "functions": [
             {
-                "level": "high", "equation": "x^3",
+                "level": "basic", "equation": "x^3",
                 "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]
             },
             {
-                "level": "high", "equation": "1/x",
+                "level": "basic", "equation": "1/x",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y"]
             },
             {
-                "level": "high", "equation": "1/(x^2)",
+                "level": "basic", "equation": "1/(x^2)",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y"]
             },
-            {"level": "high", "equation": "x^4", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
-            {"level": "high", "equation": "sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
-            {"level": "high", "equation": "sqrt(x+2)-1", "points": [{"x": -2}, {"x": -1}, {"x": 2}], "domain": "[-2, \\infty )"},
+            {"level": "basic", "equation": "x^4", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
+            {"level": "basic", "equation": "sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
+            {"level": "medium", "equation": "sqrt(x+2)-1", "points": [{"x": -2}, {"x": -1}, {"x": 2}], "domain": "[-2, \\infty )"},
             {
-                "level": "high", "equation": "1/(x-1)",
+                "level": "medium", "equation": "1/(x-1)",
                 "points": [{"x": 0}, {"x": 2}, {"x": 3, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{1\\}",
                 "asymptotes": ["x-1", "y"]
             },
-            {"level": "high", "equation": "x^3 - 1", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
+            {"level": "medium", "equation": "x^3 - 1", "points": [{"x": 0}, {"x": 1}, {"x": -1.5, "labeled": true}]},
             {
-                "level": "high", "equation": "2/x",
+                "level": "medium", "equation": "2/x",
                 "points": [{"x": 1}, {"x": 2}, {"x": -0.5}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y"]
             },
             {
-                "level": "high", "equation": "-(1/x)",
+                "level": "medium", "equation": "-(1/x)",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y"]
             },
             {
-                "level": "high", "equation": "-(1/(x^2))",
+                "level": "medium", "equation": "-(1/(x^2))",
                 "points": [{"x": 1}, {"x": 1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y"]
             },
             {
-                "level": "high", "equation": "1/x - 2",
+                "level": "medium", "equation": "1/x - 2",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y+2"]
             },
             {
-                "level": "high", "equation": "-1/(x - 2)",
+                "level": "medium", "equation": "-1/(x - 2)",
                 "points": [{"x": 1}, {"x": 3}, {"x": -1, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{2\\}",
                 "asymptotes": ["x-2", "y"]
@@ -122,13 +122,13 @@ const functionsData = [
             },
             {"level": "high", "equation": "2x^3", "points": [{"x": 0}, {"x": 1}, {"x": 0.5, "labeled": true}]},
             {
-                "level": "high", "equation": "-(1/(x^2)) + 3",
+                "level": "medium", "equation": "-(1/(x^2)) + 3",
                 "points": [{"x": 1}, {"x": -1}, {"x": -2, "labeled": true}],
                 "domain": "\\mathbb{R} \\setminus \\{0\\}",
                 "asymptotes": ["x", "y-3"]
             },
-            {"level": "high", "equation": "2sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
-            {"level": "high", "equation": "sqrt(x - 3)", "points": [{"x": 3}, {"x": 4}, {"x": 7}], "domain": "[3, \\infty )"},
+            {"level": "medium", "equation": "2sqrt(x)", "points": [{"x": 0}, {"x": 1}, {"x": 4}], "domain": "[0, \\infty )"},
+            {"level": "medium", "equation": "sqrt(x - 3)", "points": [{"x": 3}, {"x": 4}, {"x": 7}], "domain": "[3, \\infty )"},
             {"level": "high", "equation": "-2sqrt(x + 2) + 5", "points": [{"x": -2}, {"x": -1}, {"x": 2}], "domain": "[-2, \\infty )"},
             {
                 "level": "high", "equation": "4/x^2 - 2",
@@ -143,13 +143,13 @@ const functionsData = [
         "description": "Exponentialfunktionen",
         "color": "green",
         "functions": [
-            {"level": "high", "equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "2^x", "points": [{"x": 0}, {"x": 2}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "3^x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "2^-x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "(1/2)^-x", "points": [{"x": 0}, {"x": 1}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "3^x - 3", "points": [{"x": 0}, {"x": 1}, {"x": 2}], "asymptotes": ["y+3"]},
+            {"level": "basic", "equation": "e^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {"level": "basic", "equation": "2^x", "points": [{"x": 0}, {"x": 2}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "3^x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "e^-x", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
+            {"level": "basic", "equation": "2^-x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "(1/2)^-x", "points": [{"x": 0}, {"x": 1}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "3^x - 3", "points": [{"x": 0}, {"x": 1}, {"x": 2}], "asymptotes": ["y+3"]},
             {"level": "high", "equation": "2(sqrt(2))^-x - 2", "points": [{"x": -2}, {"x": 0}, {"x": 2}], "asymptotes": ["y+2"]},
             {"level": "high", "equation": "4(4^(x/3))", "points": [{"x": -3}, {"x": 0}], "asymptotes": ["y"]},
             {"level": "high", "equation": "3^(x-4) - 2", "points": [{"x": 4}, {"x": 5}], "asymptotes": ["y+2"]},
@@ -160,24 +160,24 @@ const functionsData = [
                 boundingbox: [-5, 11, 11, -5],
                 "asymptotes": ["y+1"]
             },
-            {"level": "high", "equation": "10^x", "points": [{"x": 0}, {"x": 1}], boundingbox: [-15, 15, 15, -15], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "10^x", "points": [{"x": 0}, {"x": 1}], boundingbox: [-15, 15, 15, -15], "asymptotes": ["y"]},
             {"level": "high", "equation": "e^(2x)", "points": [{"x": 0}, {"x": -1, "labeled": true}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "2^(0.5x)", "points": [{"x": 0}, {"x": 4}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "(3/2)^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "2^(0.5x)", "points": [{"x": 0}, {"x": 4}], "asymptotes": ["y"]},
+            {"level": "medium", "equation": "(3/2)^x", "points": [{"x": 0}, {"x": 1, "labeled": true}], "asymptotes": ["y"]},
             {
-                "level": "high", "equation": "10^(-x)",
+                "level": "medium", "equation": "10^(-x)",
                 "points": [{"x": 0}, {"x": -1}],
                 boundingbox: [-15, 15, 15, -15],
                 "asymptotes": ["y"]
             },
             {
-                "level": "high", "equation": "0.1^x",
+                "level": "medium", "equation": "0.1^x",
                 "points": [{"x": 0}, {"x": -1}],
                 boundingbox: [-15, 15, 15, -15],
                 "asymptotes": ["y"]
             },
             {"level": "high", "equation": "3^(x+1)", "points": [{"x": 0}, {"x": -1}], "asymptotes": ["y"]},
-            {"level": "high", "equation": "5^(-x) + 1", "points": [{"x": 0}, {"x": -1}], "asymptotes": ["y-1"]}
+            {"level": "medium", "equation": "5^(-x) + 1", "points": [{"x": 0}, {"x": -1}], "asymptotes": ["y-1"]}
         ]
     },
     {
@@ -186,14 +186,14 @@ const functionsData = [
         "color": "darkgreen",
         "functions": [
             {
-                "level": "high", "equation": "log(x)",
+                "level": "basic", "equation": "log(x)",
                 "points": [{"x": 1}, {"x": "e", "labeled": true}],
                 "domain": "(0, \\infty )",
                 "asymptotes": ["x"]
             },
-            {"level": "high", "equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
+            {"level": "basic", "equation": "log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
             {
-                "level": "high", "equation": "log(x, 0.5)",
+                "level": "basic", "equation": "log(x, 0.5)",
                 "points": [{"x": 1}, {"x": 0.5, "labeled": true}],
                 "domain": "(0, \\infty )",
                 "asymptotes": ["x"]
@@ -204,23 +204,23 @@ const functionsData = [
                 "domain": "(-\\infty, 0)",
                 "asymptotes": ["x"]
             },
-            {"level": "high", "equation": "-log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty)", "asymptotes": ["x"]},
+            {"level": "medium", "equation": "-log(x, 2)", "points": [{"x": 1}, {"x": 2}], "domain": "(0, \\infty)", "asymptotes": ["x"]},
             {
-                "level": "high", "equation": "log(x) - 1",
-                "points": [{"x": 1}, {"x": "e"}],
+                "level": "medium", "equation": "log(x) - 1",
+                "points": [{"x": 1}, {"x": "e", "labeled": true, "xLabel": "e"}],
                 "domain": "(0, \\infty )",
                 "asymptotes": ["x"]
             },
             {
-                "level": "high", "equation": "log(x, 1/10)",
+                "level": "medium", "equation": "log(x, 1/10)",
                 "points": [{"x": 1}, {"x": 10}],
                 boundingbox: [-15, 15, 15, -15],
                 "domain": "(0, \\infty )",
                 "asymptotes": ["x"]
             },
-            {"level": "high", "equation": "log(x, 3)", "points": [{"x": 1}, {"x": 3}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
+            {"level": "medium", "equation": "log(x, 3)", "points": [{"x": 1}, {"x": 3}], "domain": "(0, \\infty )", "asymptotes": ["x"]},
             {
-                "level": "high", "equation": "log(x, 10)",
+                "level": "medium", "equation": "log(x, 10)",
                 "points": [{"x": 1}, {"x": 10}],
                 boundingbox: [-15, 15, 15, -15],
                 "domain": "(0, \\infty )",
@@ -239,24 +239,24 @@ const functionsData = [
         "description": "Trigonometrische Funktionen",
         "color": "darkgoldenrod",
         "functions": [
-            {"level": "high", "equation": "sin(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 1}]},
-            {"level": "high", "equation": "cos(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 0}]},
-            {"level": "high", "equation": "tan(x)", "points": [{"x": 0}, {"x": "pi/4", "labeled": true, "xLabel": "π/4", "yLabel": 1}]},
+            {"level": "basic", "equation": "sin(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 1}]},
+            {"level": "basic", "equation": "cos(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 0}]},
+            {"level": "basic", "equation": "tan(x)", "points": [{"x": 0}, {"x": "pi/4", "labeled": true, "xLabel": "π/4", "yLabel": 1}]},
             {
-                "level": "high", "equation": "cos(x) - 2",
+                "level": "medium", "equation": "cos(x) - 2",
                 "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": -2}]
             },
             {
-                "level": "high", "equation": "3 cos(x)",
+                "level": "medium", "equation": "3 cos(x)",
                 "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 0}]
             },
             {
-                "level": "high", "equation": "-sin(x)",
+                "level": "medium", "equation": "-sin(x)",
                 "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": -1}]
             },
-            {"level": "high", "equation": "-cos(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 0}]},
+            {"level": "medium", "equation": "-cos(x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 0}]},
             {
-                "level": "high", "equation": "cos(x + 1)",
+                "level": "medium", "equation": "cos(x + 1)",
                 "points": [{"x": -1}, {"x": "pi/2 - 1", "labeled": true, "xLabel": "π/2 - 1", "yLabel": 0}]
             },
             {
@@ -269,12 +269,12 @@ const functionsData = [
                 }]
             },
             {
-                "level": "high", "equation": "tan(0.5x)",
+                "level": "medium", "equation": "tan(0.5x)",
                 "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 1}]
             },
-            {"level": "high", "equation": "sin(2x)", "points": [{"x": 0}, {"x": "pi/4", "labeled": true, "xLabel": "π/4", "yLabel": 1}]},
-            {"level": "high", "equation": "sin(0.5x)", "points": [{"x": 0}, {"x": "pi", "labeled": true, "xLabel": "π", "yLabel": 0}]},
-            {"level": "high", "equation": "cos(4x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 1}]},
+            {"level": "medium", "equation": "sin(2x)", "points": [{"x": 0}, {"x": "pi/4", "labeled": true, "xLabel": "π/4", "yLabel": 1}]},
+            {"level": "medium", "equation": "sin(0.5x)", "points": [{"x": 0}, {"x": "pi", "labeled": true, "xLabel": "π", "yLabel": 0}]},
+            {"level": "medium", "equation": "cos(4x)", "points": [{"x": 0}, {"x": "pi/2", "labeled": true, "xLabel": "π/2", "yLabel": 1}]},
             {
                 "level": "high", "equation": "2sin(3x)",
                 "points": [{"x": 0}, {"x": "2pi/3", "labeled": true, "xLabel": "2π/3", "yLabel": 0}]
