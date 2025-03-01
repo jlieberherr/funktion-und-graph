@@ -93,7 +93,7 @@ button[data-isSelected="false"] {
     height: 100%;
 }
 
-#modeSelection, #nbCards {
+#levelSelection, #modeSelection, #nbCards {
     width: auto;
     padding-left: 2px;
     padding-right: 5px;

@@ -86,6 +86,10 @@ function isRandomSort() {
     }
 }
 
+function getLevel() {
+    return document.getElementById('levelSelection').value;
+}
+
 function getSelectedDirection() {
     return document.getElementById('modeSelection').value;
 }
@@ -105,6 +109,15 @@ function showFlashcards() {
         let functionsToAdd = functionDataPerId[id]["functions"];
         currentFunctions = currentFunctions.concat(functionsToAdd)
     })
+
+    let level = getLevel();
+    if (level === "basic") {
+        currentFunctions = currentFunctions.filter(d => d.level === "basic")
+    } else if (level === "medium") {
+        currentFunctions = currentFunctions.filter(d => d.level === "basic" || d.level === "medium")
+    } else if (level === "high") {
+        currentFunctions = currentFunctions.filter(d => d.level === "basic" || d.level === "medium" || d.level === "high");
+    }
 
     if (isRandomSort()) {
         currentFunctions = shuffleArray(currentFunctions);
