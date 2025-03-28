@@ -11,7 +11,7 @@ function generateButton(functionData) {
     const button = document.createElement('button');
     button.className = 'button';
     button.setAttribute('id', functionData['id']);
-    button.setAttribute('data-isSelected', 'false');
+    button.setAttribute('data-isSelected', 'true');
     button.style.backgroundColor = functionData["color"];
     button.innerHTML = functionData["description"];
     button.setAttribute('onclick', 'changeStatus(this)');
