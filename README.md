@@ -3,7 +3,7 @@
 Code repository for a website with flashcards that shows the definition of a function on one side
 and the graph of the same function on the other side of the flashcard.
 
-See www.funktion-und-graph.ch for the online version.
+See https://funktion-und-graph.ch/ for the online version.
 
 The user can choose between different types of functions:
 
