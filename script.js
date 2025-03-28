@@ -114,9 +114,9 @@ function showFlashcards() {
     if (level === "basic") {
         currentFunctions = currentFunctions.filter(d => d.level === "basic")
     } else if (level === "medium") {
-        currentFunctions = currentFunctions.filter(d => d.level === "basic" || d.level === "medium")
+        currentFunctions = currentFunctions.filter(d => d.level === "medium")
     } else if (level === "high") {
-        currentFunctions = currentFunctions.filter(d => d.level === "basic" || d.level === "medium" || d.level === "high");
+        currentFunctions = currentFunctions.filter(d => d.level === "high");
     }
 
     if (isRandomSort()) {
