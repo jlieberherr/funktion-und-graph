@@ -7,6 +7,8 @@ let currentIndex = 0;
 let isShowingFront = true;
 let board = null;
 
+const showOrderButton = false;
+
 function generateButton(functionData) {
     const button = document.createElement('button');
     button.className = 'button';
@@ -21,7 +23,11 @@ function generateButton(functionData) {
     return button;
 }
 
-function generateAllButtons() {
+function buildGUI() {
+    if (!showOrderButton) {
+        document.getElementById('randomOrderContainer').style.display = 'None';
+    }
+
     functionsData.forEach(functionData => {
             functionButtons.push(generateButton(functionData));
             functionDataPerId[functionData["id"]] = functionData;
@@ -332,6 +338,4 @@ function plotGraph(currentFunctionParams) {
 }
 
 
-window.onload = generateAllButtons;
-
-
+window.onload = buildGUI;
