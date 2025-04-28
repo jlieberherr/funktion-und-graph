@@ -387,7 +387,7 @@ const functionsData = [
             {
                 "level": "medium",
                 "equation": "sin(0.5x)",
-                "points": [{"x": 0}, {"x": "pi", "labeled": true, "xLabel": "π", "yLabel": 0}]
+                "points": [{"x": 0}, {"x": "pi", "labeled": true, "xLabel": "π", "yLabel": 1}]
             },
             {
                 "level": "medium",
